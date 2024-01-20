@@ -8,9 +8,9 @@ import {
   selectError,
   selectIsLoading,
   selectSearchedContacts,
-} from './../redux/selectors';
+} from 'reduxFiles/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from './../redux/operators';
+import { fetchContacts } from 'reduxFiles/operators';
 
 export const App = () => {
   const actualContacts = useSelector(selectSearchedContacts);

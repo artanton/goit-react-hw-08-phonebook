@@ -8,9 +8,9 @@ import {
   FormStyled,
 } from './ContactFormStyled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from '../../redux/operators';
+import { addContact } from 'reduxFiles/operators';
 import Notiflix from 'notiflix';
-import { selectContact } from '../../redux/selectors';
+import { selectContact } from 'reduxFiles/selectors';
 
 const contactSchema = Yup.object().shape({
   name: Yup.string()
