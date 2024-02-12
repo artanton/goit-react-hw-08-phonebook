@@ -9,10 +9,10 @@ import { useAuth } from '../Hooks/useAuth';
 
 
 
-const HomePage = lazy(() => import('../pages/Home'));
-const RegisterPage = lazy(() => import('../pages/Register'));
-const LoginPage = lazy(() => import('../pages/Login'));
-const ContactsPage = lazy(() => import('../pages/YourContacts'));
+const HomePage = lazy(() => import('../page/Home'));
+const RegisterPage = lazy(() => import('../page/Register'));
+const LoginPage = lazy(() => import('../page/Login'));
+const ContactsPage = lazy(() => import('../page/YourContacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
