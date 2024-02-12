@@ -8,9 +8,9 @@ import {
   FormStyled,
 } from './ContactFormStyled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'reduxFiles/operators';
+import { addContact } from 'reduxFiles/cont/operators';
 import Notiflix from 'notiflix';
-import { selectContact } from 'reduxFiles/selectors';
+import { selectContact } from 'reduxFiles/cont/selectors';
 
 const contactSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,8 +19,8 @@ const contactSchema = Yup.object().shape({
       'Insert Name and Surname please'
     )
     .required('Required'),
-  phone: Yup.string()
-    .matches(/^\d{12}$/, 'Please enter 12 digits')
+  number: Yup.string()
+    .matches(/^\d{7}$/, 'Please enter 7 digits')
 
     .required('Required'),
 });
@@ -48,7 +48,7 @@ export const ContactForm = () => {
     <Formik
       initialValues={{
         name: '',
-        phone: '',
+        number: '',
       }}
       validationSchema={contactSchema}
       onSubmit={onAdd}
@@ -62,8 +62,8 @@ export const ContactForm = () => {
 
         <FieldGroup>
           Phone Number
-          <FieldStyled name="phone" type="string" placeholder="130123456789" />
-          <ErrorMessageStyled name="phone" component="span" />
+          <FieldStyled name="number" type="string" placeholder="1234567" />
+          <ErrorMessageStyled name="number" component="span" />
         </FieldGroup>
 
         <Button type="submit">Add Contact</Button>

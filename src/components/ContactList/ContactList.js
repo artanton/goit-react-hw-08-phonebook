@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { ContactItem } from '../contactItem/ContactItem';
 import { PhoneNoList } from './ContactListStyled';
-import { selectSearchedContacts } from 'reduxFiles/selectors';
+import { selectSearchedContacts } from 'reduxFiles/cont/selectors';
 
 export const ContactList = () => {
   const actualContacts = useSelector(selectSearchedContacts);
