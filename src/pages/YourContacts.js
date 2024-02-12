@@ -12,6 +12,7 @@ import {
 } from 'reduxFiles/cont/selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'reduxFiles/cont/operators';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -39,6 +40,9 @@ export default function Contacts() {
     >
       
       <div>
+      <Helmet>
+        <title>Your contacts</title>
+      </Helmet>
         <h1>Phonebook</h1>
         <ContactForm />
 
