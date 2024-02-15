@@ -12,7 +12,7 @@ import { useAuth } from '../Hooks/useAuth';
 const HomePage = lazy(() => import('../page/Home'));
 const RegisterPage = lazy(() => import('../page/Register'));
 const LoginPage = lazy(() => import('../page/Login'));
-const ContactsPage = lazy(() => import('../page/YourContacts'));
+const ContactsPage = lazy(() => import('../page/YourContacts/YourContacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,12 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <b style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      minHeight: "100vh",
+    }}>Refreshing user...</b>
   ) : (
     <Routes>
       <Route path="/" element={<AppLayout />}>

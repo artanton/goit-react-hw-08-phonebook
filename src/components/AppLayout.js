@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import { GlobalStyle } from './GlobalStyle';
 import { Outlet } from 'react-router-dom';
-import { ProgressBar } from 'react-loader-spinner';
-import { Container } from './AppLayoutStyled';
+import {Hourglass} from 'react-loader-spinner';
+import { Container, Loader } from './AppLayoutStyled';
 import { AppBar } from './AppBar/AppBar';
 
 export const AppLayout = () => {
@@ -13,17 +13,17 @@ export const AppLayout = () => {
       <main>
         <Suspense
           fallback={
-            <div>
-              <ProgressBar
-                height="80"
-                width="400"
-                ariaLabel="progress-bar-loading"
-                wrapperStyle={{}}
-                wrapperClass="progress-bar-wrapper"
-                borderColor="#F4442E"
-                barColor="Teal"
+            <Loader>
+              <Hourglass
+  visible={true}
+  height="80"
+  width="80"
+  ariaLabel="hourglass-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  colors={['#3d3d3d', 'red']}
               />
-            </div>
+            </Loader>
           }
         >
           <Outlet />

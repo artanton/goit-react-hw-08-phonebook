@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { DeleteButton, IconWrapper, PhoneNoItem } from './ContactItemStyled';
+import { ContactText, DeleteButton, IconWrapper, PhoneNoItem } from './ContactItemStyled';
 import { deleteContact } from 'reduxFiles/cont/operators';
 import { FiX } from "react-icons/fi";
 
@@ -26,9 +26,9 @@ export const ContactItem = ({ contact }) => {
 
   return (
     <PhoneNoItem>
-      <p>
+      <ContactText>
         {name}: {fNumber}
-      </p>
+      </ContactText>
       <DeleteButton onClick={() => dispatch(deleteContact(contact.id))}>
       <IconWrapper>
 
