@@ -1,5 +1,5 @@
-import { useDispatch } from 'react-redux';
-
+import { useDispatch} from 'react-redux';
+import Notiflix from 'notiflix';
 import { logIn } from 'reduxFiles/auth/operations';
 import { Button, Form, Input, Label } from './LoginFormStyled';
 
@@ -8,14 +8,27 @@ export const LoginForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    
     const form = e.currentTarget;
     dispatch(
       logIn({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
-    );
-    form.reset();
+    ).unwrap()
+    .then(() => {
+      
+      Notiflix.Notify.success(
+        `Login successfully! `
+      );
+      
+    })
+    .catch(error => {
+      Notiflix.Notify.failure(
+        `Incorrect login or password: ${error}`
+      );
+    });
+  
   };
 
   return (

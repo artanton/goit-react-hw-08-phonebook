@@ -13,7 +13,7 @@ export const Navigation = () => {
       </MenuLink>
       {isLoggedIn && (
         <MenuLink to="/contacts">
-          Tasks
+          Contacts
         </MenuLink>
       )}
     </nav>

@@ -6,6 +6,7 @@ import { PrivateRoute } from './PrivatRouts';
 import { RestrictedRoute } from './RestricedRoute';
 import { refreshUser } from 'reduxFiles/auth/operations';
 import { useAuth } from '../Hooks/useAuth';
+import NotFoundPage from 'page/NotFoundPage';
 
 
 
@@ -51,6 +52,7 @@ export const App = () => {
             <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
+       <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
